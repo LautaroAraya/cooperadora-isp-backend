@@ -8,6 +8,7 @@ const RUTAS_ALUMNOS = require('./src/routes/alumnos');
 const RUTAS_COBROS = require('./src/routes/cobros');
 const RUTAS_STATS = require('./src/routes/stats');
 const RUTAS_PAGOS = require('./src/routes/pagos');
+const RUTAS_USUARIOS = require('./src/routes/admin-user');
 
 // Instanciación de EXPRESS (servidor)
 const app = express();
@@ -18,6 +19,7 @@ app.use('/alumnos', RUTAS_ALUMNOS);
 app.use('/cobros', RUTAS_COBROS);
 app.use('/stats', RUTAS_STATS);
 app.use('/pagos', RUTAS_PAGOS);
+app.use('/auth', RUTAS_USUARIOS);
 
 // Inicialización del servidor
 app.listen(process.env.PORT, () => {
